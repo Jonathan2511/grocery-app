@@ -31,9 +31,16 @@ class PopularCategoryCard extends StatelessWidget {
               child: Text(
                 category.name,
                 style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                        blurRadius: 10,
+                        color: Colors.black87,
+                        offset: Offset(2, 2))
+                  ],
+                ),
               ),
             ),
           ),
