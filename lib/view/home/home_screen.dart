@@ -8,6 +8,7 @@ import 'package:my_grocery/view/home/components/carousel_slider/carousel_loading
 import 'package:my_grocery/view/home/components/carousel_slider/carousel_slider_view.dart';
 import 'package:my_grocery/view/home/components/popular_category/popular_category.dart';
 import 'package:my_grocery/view/home/components/popular_category/popular_category_loading.dart';
+import 'package:my_grocery/view/home/components/popular_product/popular_product.dart';
 import 'package:my_grocery/view/home/components/popular_product/popular_product_loading.dart';
 import 'package:my_grocery/view/home/components/section_title.dart';
 
@@ -45,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                 const SectionTitle(title: "Popular Product"),
                 Obx(() {
                   if (homeController.popularProductList.isNotEmpty) {
-                    return PopularProductLoading();
+                    return PopularProduct(
+                        popularProducts: homeController.popularProductList);
                   } else {
                     return const PopularProductLoading();
                   }
