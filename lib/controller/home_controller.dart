@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:get/get.dart';
 import 'package:my_grocery/model/ad_banner.dart';
 import 'package:my_grocery/model/category.dart';
@@ -87,7 +85,6 @@ class HomeController extends GetxController {
             popularProducts: popularProductListFromJson(result.body));
       }
     } finally {
-      print(popularProductList.length);
       isPopularCategoryLoading(false);
     }
   }
