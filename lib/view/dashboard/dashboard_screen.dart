@@ -53,8 +53,9 @@ class DashboardScreen extends StatelessWidget {
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(
+                    icon: Icon(Icons.grid_view_rounded), label: 'Products'),
+                BottomNavigationBarItem(
                     icon: Icon(Icons.category), label: 'Category'),
-                BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.account_circle), label: 'Account'),
               ]),
