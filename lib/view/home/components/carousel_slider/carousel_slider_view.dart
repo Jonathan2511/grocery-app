@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_grocery/model/add_banner.dart';
+import 'package:my_grocery/model/ad_banner.dart';
 import 'package:my_grocery/view/home/components/carousel_slider/banner_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
