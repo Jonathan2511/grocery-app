@@ -14,6 +14,7 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(
       builder: (controller) => Scaffold(
+        // backgroundColor: Colors.grey.shade100, buat ganti background color tapi lebih suka putih sih
         body: SafeArea(
           child: IndexedStack(
             index: controller.tabIndex,
@@ -41,7 +42,7 @@ class DashboardScreen extends StatelessWidget {
               behaviour: SnakeBarBehaviour.floating,
               snakeShape: SnakeShape.circle,
               padding: EdgeInsets.symmetric(vertical: 5),
-              unselectedLabelStyle: TextStyle(fontSize: 11),
+              unselectedLabelStyle: TextStyle(fontSize: 13),
               snakeViewColor: Theme.of(context).primaryColor,
               unselectedItemColor: Theme.of(context).colorScheme.secondary,
               showUnselectedLabels: true,
