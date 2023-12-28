@@ -13,6 +13,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
         Navigator.push(
             context,
             MaterialPageRoute(
@@ -31,22 +32,25 @@ class ProductCard extends StatelessWidget {
               Flexible(
                 flex: 5,
                 child: Center(
-                    child: CachedNetworkImage(
-                  imageUrl: baseUrl + product.images.first,
-                  placeholder: (context, url) => Shimmer.fromColors(
-                    highlightColor: Colors.white,
-                    baseColor: Colors.grey.shade300,
-                    child: Center(
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 20),
-                        color: Colors.grey.shade300,
+                    child: Hero(
+                  tag: product.images.first,
+                  child: CachedNetworkImage(
+                    imageUrl: baseUrl + product.images.first,
+                    placeholder: (context, url) => Shimmer.fromColors(
+                      highlightColor: Colors.white,
+                      baseColor: Colors.grey.shade300,
+                      child: Center(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 20),
+                          color: Colors.grey.shade300,
+                        ),
                       ),
                     ),
-                  ),
-                  errorWidget: (context, url, error) => const Center(
-                    child: Icon(
-                      Icons.error_outline,
-                      color: Colors.grey,
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.error_outline,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                 )),
@@ -62,14 +66,14 @@ class ProductCard extends StatelessWidget {
                         product.name,
                         style: TextStyle(
                             fontSize: 15,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                             color: Theme.of(context).primaryColor),
                       ),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 4),
                       Text(
                         'Rp ${product.tags?.first.price.toStringAsFixed(0)}',
                         style:
-                            const TextStyle(fontSize: 12, color: Colors.grey),
+                            const TextStyle(fontSize: 13.5, color: Colors.grey),
                       )
                     ]),
               )

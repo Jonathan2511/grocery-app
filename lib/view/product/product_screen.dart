@@ -21,7 +21,9 @@ class ProductScreen extends StatelessWidget {
               if (productController.productList.isNotEmpty) {
                 return ProductGrid(products: productController.productList);
               } else {
-                return const ProductLoadingGrid();
+                return const Center(
+                  child: Text('Products not found!'),
+                );
               }
             }
           }))
