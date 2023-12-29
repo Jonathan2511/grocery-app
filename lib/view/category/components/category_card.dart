@@ -1,7 +1,4 @@
 // ignore_for_file: sort_child_properties_last
-
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:my_grocery/const.dart';
