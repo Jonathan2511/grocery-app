@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_grocery/controller/controllers.dart';
 
 class SectionTitle extends StatelessWidget {
   final String title;
@@ -15,9 +16,18 @@ class SectionTitle extends StatelessWidget {
             title,
             style: const TextStyle(fontSize: 18, color: Colors.black),
           ),
-          const Text(
-            "See More",
-            style: TextStyle(color: Colors.grey),
+          InkWell(
+            onTap: () {
+              if (title == "Popular Product") {
+                dashboardController.updateIndex(1);
+              } else if (title == "Popular Category") {
+                dashboardController.updateIndex(2);
+              }
+            },
+            child: const Text(
+              "See More",
+              style: TextStyle(color: Colors.grey),
+            ),
           ),
         ],
       ),

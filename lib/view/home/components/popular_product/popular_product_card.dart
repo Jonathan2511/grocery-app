@@ -41,8 +41,7 @@ class PopularProductCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 10),
+              Center(
                 child: Text(
                   product.name,
                   style: const TextStyle(color: Colors.black, fontSize: 14),

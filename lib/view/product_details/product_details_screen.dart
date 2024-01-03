@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:intl/intl.dart';
 import 'package:my_grocery/model/product.dart';
+import 'package:my_grocery/theme/app_theme.dart';
+
 import 'package:my_grocery/view/product_details/components/product_carousel_slider.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -38,13 +41,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                  'Rp ${widget.product.tags?.first.price.toStringAsFixed(0)}',
+                  'Rp ${(widget.product.tags![_tagIndex].price * double.parse(_qty.toStringAsFixed(0))).toString().replaceAll(RegExp(r"([.]*0+)(?!.*\d)"), "")}',
                   style: TextStyle(
                       fontSize: 18,
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w600)),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -129,7 +132,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -159,7 +162,16 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             backgroundColor: MaterialStateProperty.all<Color>(
                 Theme.of(context).primaryColor),
           ),
-          onPressed: () {},
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              duration: const Duration(milliseconds: 700),
+              content: const Text(
+                'Added to Cart',
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: AppTheme.lightPrimaryColor,
+            ));
+          },
           child: const Padding(
             padding: EdgeInsets.all(6.0),
             child: Text('Add to Cart', style: TextStyle(fontSize: 14)),

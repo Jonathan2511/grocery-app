@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badge;
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
+import 'package:my_grocery/view/cart/cart.dart';
 
 class MainHeader extends StatelessWidget {
   const MainHeader({super.key});
@@ -66,17 +67,23 @@ class MainHeader extends StatelessWidget {
                   ),
                 ))),
         const SizedBox(width: 10),
-        Container(
-          height: 46,
-          width: 46,
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              boxShadow: <BoxShadow>[
-                BoxShadow(color: Colors.grey.withOpacity(0.6), blurRadius: 8)
-              ]),
-          child: const Icon(Icons.filter_alt_outlined, color: Colors.grey),
+        GestureDetector(
+          onTap: () {
+            dashboardController.updateIndex(3);
+          },
+          child: Container(
+            height: 46,
+            width: 46,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(color: Colors.grey.withOpacity(0.6), blurRadius: 8)
+                ]),
+            child:
+                const Icon(Icons.account_circle_outlined, color: Colors.grey),
+          ),
         ),
         const SizedBox(width: 10),
         badge.Badge(
@@ -88,17 +95,24 @@ class MainHeader extends StatelessWidget {
           ),
           badgeStyle:
               badge.BadgeStyle(badgeColor: Theme.of(context).primaryColor),
-          child: Container(
-            height: 46,
-            width: 46,
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(color: Colors.grey.withOpacity(0.6), blurRadius: 8)
-                ]),
-            child: const Icon(Icons.shopping_cart_outlined, color: Colors.grey),
+          child: InkWell(
+            onTap: () {
+              Get.to(const Cart());
+            },
+            child: Container(
+              height: 46,
+              width: 46,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.6), blurRadius: 8)
+                  ]),
+              child:
+                  const Icon(Icons.shopping_cart_outlined, color: Colors.grey),
+            ),
           ),
         ),
         const SizedBox(width: 5),

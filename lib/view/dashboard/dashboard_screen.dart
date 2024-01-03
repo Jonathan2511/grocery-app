@@ -31,10 +31,7 @@ class DashboardScreen extends StatelessWidget {
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            border: Border(
-                top: BorderSide(
-                    color: Theme.of(context).colorScheme.secondary,
-                    width: 0.7)),
+            border: Border(top: BorderSide(color: Colors.black54, width: 0.7)),
           ),
           child: SnakeNavigationBar.color(
               behaviour: SnakeBarBehaviour.floating,

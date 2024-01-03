@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers, prefer_interpolation_to_compose_strings
+
 import 'package:flutter/material.dart';
 import 'package:my_grocery/controller/controllers.dart';
 import 'package:my_grocery/extention/string_extention.dart';

@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
                   ),
                 )),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               Flexible(
                 flex: 2,
                 child: Column(
@@ -65,11 +65,11 @@ class ProductCard extends StatelessWidget {
                       Text(
                         product.name,
                         style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 15.3,
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).primaryColor),
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 3),
                       Text(
                         'Rp ${product.tags?.first.price.toStringAsFixed(0)}',
                         style:

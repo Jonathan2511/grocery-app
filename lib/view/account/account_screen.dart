@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
+import 'package:my_grocery/view/account/component/about_us.dart';
 
 import 'auth/sign_in_screen.dart';
 
@@ -50,10 +53,26 @@ class AccountScreen extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const SignInScreen()));
               }),
-          buildAccountCard(title: "Notification", onClick: () {}),
-          buildAccountCard(title: "Settings", onClick: () {}),
-          buildAccountCard(title: "About Us", onClick: () {}),
-          buildAccountCard(title: "Terms of Service", onClick: () {}),
+          buildAccountCard(
+              title: "Notification",
+              onClick: () {
+                Get.to(AboutUs());
+              }),
+          buildAccountCard(
+              title: "Settings",
+              onClick: () {
+                Get.to(AboutUs());
+              }),
+          buildAccountCard(
+              title: "About Us",
+              onClick: () {
+                Get.to(AboutUs());
+              }),
+          buildAccountCard(
+              title: "Terms of Service",
+              onClick: () {
+                Get.to(AboutUs());
+              }),
           Obx(() => buildAccountCard(
               title: authController.user.value == null ? "Sign In" : "Sign Out",
               onClick: () {

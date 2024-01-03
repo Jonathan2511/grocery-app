@@ -80,18 +80,6 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: const Text(
-                        "Forgot Password",
-                        style: TextStyle(fontSize: 12),
-                      ),
-                    )
-                  ],
-                ),
                 const Spacer(),
                 InputTextButton(
                   title: "Sign In",
