@@ -97,7 +97,7 @@ class MainHeader extends StatelessWidget {
               badge.BadgeStyle(badgeColor: Theme.of(context).primaryColor),
           child: InkWell(
             onTap: () {
-              Get.to(const Cart());
+              Get.to(() => const Cart());
             },
             child: Container(
               height: 46,

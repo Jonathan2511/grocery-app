@@ -56,7 +56,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     decoration: BoxDecoration(
                         border: Border.all(width: 1),
                         borderRadius:
-                            const BorderRadius.all(Radius.circular(8))),
+                            const BorderRadius.all(Radius.circular(20))),
                     child: Row(
                       children: [
                         InkWell(
@@ -94,7 +94,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     decoration: BoxDecoration(
                         border: Border.all(width: 1),
                         borderRadius:
-                            const BorderRadius.all(Radius.circular(8))),
+                            const BorderRadius.all(Radius.circular(20))),
                     child: Row(
                       children: [
                         InkWell(

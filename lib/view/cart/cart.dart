@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_grocery/theme/app_theme.dart';
+import 'package:my_grocery/view/cart/component/cart_item.dart';
 
-class Cart extends StatelessWidget {
+class Cart extends StatefulWidget {
   const Cart({super.key});
 
+  @override
+  State<Cart> createState() => _CartState();
+}
+
+class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +32,30 @@ class Cart extends StatelessWidget {
               ],
             ),
           ),
-          // Your body content...
+          const CartItem(
+            image:
+                'https://www.tastingtable.com/img/gallery/the-cut-of-meat-steak-tips-come-from/intro-1672422211.jpg',
+            title: 'Daging Sapi Fresh',
+            price: 'Rp 90000',
+            weight: '1kg',
+          ),
+          const CartItem(
+            image:
+                'https://www.hondacengkareng.com/cover-body-motor-honda/cover-body-sticker-striping-honda-vario-125-esp-k60/honda-vario-125-esp-k60-black-green/',
+            title: 'Vario 125',
+            price: 'Rp 80000',
+            weight: '125cc',
+          ),
+          const CartItem(
+            image:
+                'https://img.overclockers.co.uk/content/images/pdp/refract/Jade-refract_panel_on-square.jpg',
+            title: 'PC Geming',
+            price: 'Rp 99999',
+            weight: 'Gemink',
+          ),
+          // INI UNTUK NAMBAH BARU
+
+          // INI BOTTOM NYA
         ],
       ),
       bottomNavigationBar: Padding(
