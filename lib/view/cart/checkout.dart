@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
 import 'package:my_grocery/theme/app_theme.dart';
-import 'package:my_grocery/view/cart/checkout.dart';
-import 'package:my_grocery/view/cart/component/cart_item.dart';
+import 'package:my_grocery/view/cart/component/checkout_item.dart';
+import 'package:my_grocery/view/cart/component/delivery_method.dart';
+import 'package:my_grocery/view/cart/component/shipping_address.dart';
+import 'package:my_grocery/view/cart/component/store_name.dart';
 
-class Cart extends StatefulWidget {
-  const Cart({super.key});
+class Checkout extends StatefulWidget {
+  const Checkout({super.key});
 
   @override
-  State<Cart> createState() => _CartState();
+  State<Checkout> createState() => _CheckoutState();
 }
 
-class _CartState extends State<Cart> {
+class _CheckoutState extends State<Checkout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cart'),
+        title: const Text('Checkout'),
         backgroundColor: AppTheme.lightBackgroundColor,
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 2,
@@ -36,21 +38,26 @@ class _CartState extends State<Cart> {
                 ],
               ),
             ),
-            const CartItem(
+            const ShippingAddress(),
+            const SizedBox(
+              height: 10,
+            ),
+            const StoreName(),
+            const CheckoutItem(
               image:
                   'https://media.istockphoto.com/id/505207430/photo/fresh-raw-beef-steak.jpg?s=612x612&w=0&k=20&c=QxOege3Io4h1TNJLtGYh71rxb29p1BfFcZvCipz4WVY=',
               title: 'Daging Sapi Potong',
               price: 'Rp 90000',
               weight: '1kg',
             ),
-            const CartItem(
+            const CheckoutItem(
               image:
                   'https://img.freepik.com/premium-photo/raw-chicken-carcass-cutting-board-isolated-white-background_109285-9516.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704672000&semt=ais',
               title: 'Daging Ayam',
               price: 'Rp 35000',
               weight: '1kg',
             ),
-            const CartItem(
+            const CheckoutItem(
               image:
                   'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//99/MTA-3853476/lahap_lahap-beras-premium-5-kg_full02.jpg',
               title: 'Beras Lahap Premium',
@@ -58,7 +65,11 @@ class _CartState extends State<Cart> {
               weight: '5kg',
             ),
             const SizedBox(
-              height: 273,
+              height: 10,
+            ),
+            const DeliveryMethod(),
+            const SizedBox(
+              height: 55,
             ),
             const Divider(
               color: Colors.grey,
@@ -78,7 +89,7 @@ class _CartState extends State<Cart> {
                   )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -92,7 +103,14 @@ class _CartState extends State<Cart> {
           ),
           onPressed: () {
             if (authController.user.value != null) {
-              Get.to(const Checkout());
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                duration: const Duration(milliseconds: 700),
+                content: const Text(
+                  'Hello',
+                  style: TextStyle(color: Colors.white),
+                ),
+                backgroundColor: AppTheme.lightPrimaryColor,
+              ));
             } else {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 duration: const Duration(milliseconds: 1000),
@@ -106,7 +124,7 @@ class _CartState extends State<Cart> {
           },
           child: const Padding(
             padding: EdgeInsets.all(6.0),
-            child: Text('Checkout', style: TextStyle(fontSize: 14)),
+            child: Text('Make Order', style: TextStyle(fontSize: 14)),
           ),
         ),
       ),

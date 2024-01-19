@@ -88,7 +88,7 @@ class MainHeader extends StatelessWidget {
         const SizedBox(width: 10),
         badge.Badge(
           badgeContent: const Text(
-            "1",
+            "3",
             style: TextStyle(
               color: Colors.white,
             ),

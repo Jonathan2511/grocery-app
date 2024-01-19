@@ -3,13 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_grocery/theme/app_theme.dart';
 
-class CartItem extends StatefulWidget {
+class CheckoutItem extends StatefulWidget {
   final String image;
   final String title;
   final String price;
   final String weight;
 
-  const CartItem({
+  const CheckoutItem({
     Key? key,
     required this.image,
     required this.title,
@@ -18,10 +18,10 @@ class CartItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CartItem> createState() => _CartItemState();
+  State<CheckoutItem> createState() => _CheckoutItemState();
 }
 
-class _CartItemState extends State<CartItem> {
+class _CheckoutItemState extends State<CheckoutItem> {
   late String image;
   late String title;
   late String price;
@@ -47,8 +47,8 @@ class _CartItemState extends State<CartItem> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 90,
-                  height: 90,
+                  width: 75,
+                  height: 75,
                   decoration: BoxDecoration(
                     border: Border.all(width: 1, color: Colors.grey.shade300),
                     borderRadius: BorderRadius.circular(10),
@@ -68,7 +68,7 @@ class _CartItemState extends State<CartItem> {
                         title,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18.5,
+                          fontSize: 16.5,
                           color: AppTheme.lightPrimaryColor,
                         ),
                         maxLines: 2,
@@ -79,47 +79,28 @@ class _CartItemState extends State<CartItem> {
                       Text(
                         weight,
                         style: TextStyle(
-                          fontSize: 15.5,
+                          fontSize: 14.5,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(
-                        height: 11,
+                        height: 5,
                       ),
                       Row(
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 1),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(20)),
-                            ),
-                            child: Row(
-                              children: [
-                                InkWell(
-                                  onTap: () {},
-                                  child: Icon(Icons.remove,
-                                      color: Colors.grey.shade800),
-                                ),
-                                Text(
-                                  '1',
-                                  style: TextStyle(color: Colors.grey.shade800),
-                                ),
-                                InkWell(
-                                  onTap: () {},
-                                  child: Icon(Icons.add,
-                                      color: Colors.grey.shade800),
-                                )
-                              ],
+                          Text(
+                            price,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
                             ),
                           ),
                           Spacer(),
                           Text(
-                            price,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
+                            'x1',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppTheme.lightPrimaryColor),
                           )
                         ],
                       ),

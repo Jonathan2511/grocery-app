@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
+import 'package:my_grocery/theme/app_theme.dart';
 import 'package:my_grocery/view/account/component/about_us.dart';
 
 import 'auth/sign_in_screen.dart';
@@ -54,24 +55,42 @@ class AccountScreen extends StatelessWidget {
                         builder: (context) => const SignInScreen()));
               }),
           buildAccountCard(
-              title: "Notification",
+              title: "My Order",
               onClick: () {
-                Get.to(AboutUs());
+                if (authController.user.value != null) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    duration: const Duration(milliseconds: 700),
+                    content: const Text(
+                      'Hello',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: AppTheme.lightPrimaryColor,
+                  ));
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    duration: const Duration(milliseconds: 1000),
+                    content: const Text(
+                      'Please Login First',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: AppTheme.lightPrimaryColor,
+                  ));
+                }
               }),
           buildAccountCard(
               title: "Settings",
               onClick: () {
-                Get.to(AboutUs());
+                Get.to(() => AboutUs());
               }),
           buildAccountCard(
               title: "About Us",
               onClick: () {
-                Get.to(AboutUs());
+                Get.to(() => AboutUs());
               }),
           buildAccountCard(
               title: "Terms of Service",
               onClick: () {
-                Get.to(AboutUs());
+                Get.to(() => AboutUs());
               }),
           Obx(() => buildAccountCard(
               title: authController.user.value == null ? "Sign In" : "Sign Out",
