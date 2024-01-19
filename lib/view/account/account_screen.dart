@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
 import 'package:my_grocery/theme/app_theme.dart';
 import 'package:my_grocery/view/account/component/about_us.dart';
+import 'package:my_grocery/view/account/component/my_order.dart';
 
 import 'auth/sign_in_screen.dart';
 
@@ -58,14 +59,7 @@ class AccountScreen extends StatelessWidget {
               title: "My Order",
               onClick: () {
                 if (authController.user.value != null) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    duration: const Duration(milliseconds: 700),
-                    content: const Text(
-                      'Hello',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    backgroundColor: AppTheme.lightPrimaryColor,
-                  ));
+                  Get.to(() => MyOrder());
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     duration: const Duration(milliseconds: 1000),

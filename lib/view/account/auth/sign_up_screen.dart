@@ -97,15 +97,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       if (!value.isValidPasswordHasNumber) {
                         _validation.add("Must contain 1 number");
                       }
-                      if (!value.isValidPasswordHasCapitalLetter) {
-                        _validation.add("Must contain 1 capital letter");
-                      }
+
                       if (!value.isValidPasswordHasLowerCaseLetter) {
                         _validation.add("Must contain 1 simple letter");
-                      }
-                      if (!value.isValidPasswordHasSpecialCharacter) {
-                        _validation.add(
-                            "Must contain 1 special character[! @ # \$ %]");
                       }
                     }
                     String msg = '';
