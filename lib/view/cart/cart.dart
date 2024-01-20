@@ -92,7 +92,7 @@ class _CartState extends State<Cart> {
           ),
           onPressed: () {
             if (authController.user.value != null) {
-              Get.to(const Checkout());
+              Get.to(() => const Checkout());
             } else {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 duration: const Duration(milliseconds: 1000),

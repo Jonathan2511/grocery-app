@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_grocery/controller/controllers.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
 import 'package:my_grocery/theme/app_theme.dart';
 import 'package:my_grocery/view/cart/component/checkout_item.dart';
 import 'package:my_grocery/view/cart/component/delivery_method.dart';
@@ -102,25 +103,9 @@ class _CheckoutState extends State<Checkout> {
                 Theme.of(context).primaryColor),
           ),
           onPressed: () {
-            if (authController.user.value != null) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                duration: const Duration(milliseconds: 700),
-                content: const Text(
-                  'Hello',
-                  style: TextStyle(color: Colors.white),
-                ),
-                backgroundColor: AppTheme.lightPrimaryColor,
-              ));
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                duration: const Duration(milliseconds: 1000),
-                content: const Text(
-                  'Please Login First',
-                  style: TextStyle(color: Colors.white),
-                ),
-                backgroundColor: AppTheme.lightPrimaryColor,
-              ));
-            }
+            EasyLoading.showSuccess("Order Processed");
+            Navigator.of(Get.overlayContext!).pop();
+            Navigator.of(Get.overlayContext!).pop();
           },
           child: const Padding(
             padding: EdgeInsets.all(6.0),
