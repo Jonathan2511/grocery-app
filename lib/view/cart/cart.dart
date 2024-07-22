@@ -86,8 +86,8 @@ class _CartState extends State<Cart> {
         padding: const EdgeInsets.all(8.0),
         child: TextButton(
           style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-            backgroundColor: MaterialStateProperty.all<Color>(
+            foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+            backgroundColor: WidgetStateProperty.all<Color>(
                 Theme.of(context).primaryColor),
           ),
           onPressed: () {
