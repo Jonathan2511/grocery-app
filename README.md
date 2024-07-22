@@ -1,16 +1,25 @@
-# my_grocery
+# My Grocery
+Flutter Grocery App for Mobile!
 
-A new Flutter project.
+![MyGrocery](https://github.com/user-attachments/assets/9d577a03-3407-43ce-941e-fe080b2580dc)
 
-## Getting Started
+## What's Working:
+- API Integration
+- Account Authentication & Registration
+- Product & Category Fetching
+- Banner & Price Display
+- Skeleton Loading
+- Global Search
 
-This project is a starting point for a Flutter application.
+## Not Yet Implemented:
+- Cart (currently hardcoded)
+- Checkout Menu (currently hardcoded)
 
-A few resources to get you started if this is your first Flutter project:
+## To Do:
+- Fix Cart & Checkout Logic
+- Add CMS
+- More features coming soon...
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Feel free to contribute or report any issues!
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Credit to: [Programming Night](https://www.youtube.com/@programmingnight/videos)
